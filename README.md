@@ -4,11 +4,9 @@
 
 (hayashi means *forest* in japanese)
 
-[![arXiv](https://img.shields.io/badge/arXiv-22XX.XXXXX-B31B1B.svg)](http://arxiv.org/abs/22XX.XXXXX)
+[![arXiv](https://img.shields.io/badge/arXiv-2209.01305-B31B1B.svg)](http://arxiv.org/abs/2209.01305) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7044255.svg)](https://doi.org/10.5281/zenodo.7044255) ![Python](https://img.shields.io/pypi/pyversions/python-binance.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7044255.svg)](https://doi.org/10.5281/zenodo.7044255)
-
-Python library for computing the number of absorption features of the 21 cm forest in a semianalytic formalism. Includes the enhancement of the signal due to the presence of substructures within minihalos, as studied in [arXiv:22XX.XXXXX](https://arxiv.org/abs/22XX.XXXXX). It supports non-standard cosmologies with impact in the large scale structure, such as warm dark matter and primordial black holes. See the papers [arXiv:22XX.XXXXX](https://arxiv.org/abs/22XX.XXXXX), [arXiv:2104.10695](https://arxiv.org/abs/2104.10695) for more details.
+Python library for computing the number of absorption features of the 21 cm forest in a semianalytic formalism. Includes the enhancement of the signal due to the presence of substructures within minihalos, as studied in [arXiv:2209.01305](https://arxiv.org/abs/2209.01305). It supports non-standard cosmologies with impact in the large scale structure, such as warm dark matter and primordial black holes. See the papers [arXiv:2209.01305](https://arxiv.org/abs/2209.01305), [arXiv:2104.10695](https://arxiv.org/abs/2104.10695) for more details.
 
 
 ## Usage
@@ -37,7 +35,7 @@ Tk = Tk_ad(z)
  Nabs, dNabsdtau = 21cmforest.num_absorbers()
  ```
 
-It is straightforward to include non-standard cosmologies by replacing the halo mass function, either using those included in the code or defined by the user:
+It is straightforward to include non-standard cosmologies by replacing the halo mass function, either using those included in the code or defined by the user. This is an example with primordial black holes, which modify the halo mass function due to a shot noise isocurvature mode (see [arXiv:2104.10695](https://arxiv.org/abs/2104.10695)):
 
 ```python
 from Source.nlcdm import dndlnM_PBH
@@ -55,11 +53,11 @@ In order to illustrate the usage of the library, we include several example note
 
 * `absorbers_example.ipynb`: computes all the relevant outputs for the 21 cm forest, such as the optical depth, the maximum impact parameter and the number of absorbers, comparing the cases with and without the subhalo contribution.
 
-* `tidal_disruption.ipynb`: compares the 21 cm forest observables when tidal disruption is considered in subhalos.
+* `nlcdm_example.ipynb`: compares the standard CDM 21 cm forest with different non-standard cosmologies: warm dark matter and primordial black holes.
 
 * `density_profiles.ipynb`: compares the 21 cm forest outputs for different density profiles: NFW and uniform.
 
-* `nlcdm_example.ipynb`: compares the standard CDM 21 cm forest with different non-standard cosmologies: warm dark matter and primordial black holes.
+* `tidal_disruption.ipynb`: compares the 21 cm forest observables when tidal disruption is considered in subhalos.
 
 
 ## Requisites
@@ -74,7 +72,7 @@ The code is written in Python3, and makes use of the package for cosmological co
 
 ## Citation
 
-If you use the code, please link this repository, and cite [arXiv:22XX.XXXXX](https://arxiv.org/abs/22XX.XXXXX) and the DOI [10.5281/zenodo.7044255](https://doi.org/10.5281/zenodo.7044255).
+If you use the code, please link this repository, and cite [arXiv:2209.01305](https://arxiv.org/abs/2209.01305) and the DOI [10.5281/zenodo.7044255](https://doi.org/10.5281/zenodo.7044255).
 
 
 ## Contact

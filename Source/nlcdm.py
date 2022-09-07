@@ -87,7 +87,7 @@ def dndlnM_WDM(M,z,mwdm):  # dndlnM units of (h/Mpc)^3
     deltac = 1.68647/cosmomodel.growthFactor(z)
     nu = (deltac**2/s2)
     dlogsigdlogm = np.abs(DerSigma2_WDM(M,mwdm)/(2.*s2))
-    return Omega_m*rho_c_Mpc*f_st(nu)/M*dlogsigdlogm*(1. + 2.*M_hmm(M)/M)**(-0.6)
+    return Omega_m*rho_c_Mpc*f_st(nu)/M*dlogsigdlogm*(1. + 2.*M_hmm(mwdm)/M)**(-0.6)
 
 # Vectorize some functions to allow them to take arrays as inputs
 Sigma2_PBH = np.vectorize(Sigma2_PBH)
