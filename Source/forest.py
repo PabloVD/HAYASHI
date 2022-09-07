@@ -1,7 +1,7 @@
 """"
 Main 21 cm forest class
 Author: Pablo Villanueva Domingo
-Last update: July 2022
+Last update: September 2022
 """
 
 import numpy as np
@@ -12,6 +12,7 @@ from scipy import integrate, interpolate
 from Source.constants import *
 from Source import cosmo
 from Source import subhalos
+from Source import lss
 
 #---------------------------
 # 21cm Forest general class
@@ -21,9 +22,9 @@ class Forest():
                  z,                         # z: redshift of evaluation
                  Tk,                        # Tk: gas temperature of the IGM at that redshift
                  use_subhalos = True,       # use_subhalos: 1 for including the subhalo contribution, 0 otherwise
-                 dndlnM = cosmo.dndlnM_CDM, # dndlnM: halo mass function for host halos (default: Sheth-Thormen)
+                 dndlnM = lss.dndlnM_CDM, # dndlnM: halo mass function for host halos (default: Sheth-Thormen)
                  sub_distr = "nfw",         # sub_distr: distribution of subhalos within the halo. Choose between "nfw" for the NFW profile, and "uni" for uniform distribution
-                 tidal = False              # tidal: if True, use tidal disruption in outer parts of subhalos
+                 tidal = False             # tidal: if True, use tidal disruption in outer parts of subhalos
                  ):
 
         # Redshift
@@ -97,6 +98,7 @@ class Forest():
         self.tau_host_int = lambda M, al: self.tau_host_int_logM(np.log(M),al)
         self.tau_sub_int_logM = interpolate.interp2d(self.logMvec, self.impparam, np.transpose(self.tau_sub_arr),kind="linear")
         self.tau_sub_int = lambda M, al: self.tau_sub_int_logM(np.log(M),al)
+        self.tau_tot_int = lambda M, al: self.tau_host_int(M, al) + self.tau_sub_int(M, al)
         self.boost_factor_int_logM = interpolate.interp2d(self.logMvec, self.impparam, np.transpose(self.boost_factor_arr),kind="linear")
         self.boost_factor_int = lambda M, al: self.boost_factor_int_logM(np.log(M),al)
         self.max_impact_int_log = interpolate.interp2d(np.log(self.tauvec), self.logMvec, np.transpose(self.max_impact_arr),kind="linear")

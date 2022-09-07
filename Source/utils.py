@@ -2,7 +2,7 @@
 Utility functions
 Pablo Villanueva Domingo
 Started: October 2018
-Last update: April 2021
+Last update: July 2022
 """
 
 import numpy as np
@@ -31,6 +31,7 @@ def scinot(x):
         return r"$10^{"+str(exp)+"}$"
     else:
         return r"${:.0f}".format(prefactor)+" \\times 10^{"+str(exp)+"}$"
+
 
 # Import the IGM temperature from interpolation
 def GetTemperature(z, zetax):

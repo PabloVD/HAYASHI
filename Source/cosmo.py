@@ -12,11 +12,9 @@ from Source.constants import *
 # Employ the Colossus package for some cosmological computations:
 # https://bdiemer.bitbucket.io/colossus/tutorials.html
 from colossus.cosmology import cosmology
-from colossus.lss import mass_function
 from colossus.halo.concentration import concentration
 
-
-
+# Define a cosmological model with Colossus
 cosmomodel = cosmology.setCosmology('planck18')
 rho_c_Mpc = cosmomodel.rho_c(0)*1e9   # in M_sun h^2 Mpc^-3
 
@@ -53,6 +51,7 @@ def rho_m_z(z):
 def rho_c_z(z):
     return rho_c*( Omega_m*(1.+z)**3. + Omega_l )
 
+
 #--- HALO VIRIALITIES ---#
 
 # Omega_m*(1.+z)**3./(Omega_m*(1.+z)**3. + Omega_l)
@@ -88,9 +87,6 @@ def con(M,z,model="ishiyama21"):
     else:     # Employs fit from colossus. Default here is taken as "ishiyama21"
         return concentration(M, "vir", z=z, model=model)
 
-# Halo mass function in LCDM cosmology, dndlnM, units of (h/Mpc)^3, using the Sheth-Tormen parameterization
-def dndlnM_CDM(M,z):
-    return mass_function.massFunction(M,z, q_out = "dndlnM", model = "sheth99")
 
 #--- DENSITY PROFILES ---#
 
@@ -120,7 +116,6 @@ def rho_nfw(M,z,y,r):
     rho_0 = rho_c_z(z)*Deltac(z)/3.*y**3./Fint(y)
     x = y*r/Rvir(M,z)
     return rho_0/x/(1.+x)**2.
-
 
 
 #--- 21 CM ---#

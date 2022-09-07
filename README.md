@@ -4,9 +4,50 @@
 
 (hayashi means *forest* in japanese)
 
-[![arXiv](https://img.shields.io/badge/arXiv-22XX.XXXXX-B31B1B.svg)](http://arxiv.org/abs/22XX.XXXXX) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4707447.svg)](https://doi.org/10.5281/zenodo.4707447)
+[![arXiv](https://img.shields.io/badge/arXiv-22XX.XXXXX-B31B1B.svg)](http://arxiv.org/abs/22XX.XXXXX)
 
-Python library for computing the number of absorption features of the 21 cm forest in a semianalytic formalism. Includes the enhancement of the signal due to the presence of substructures within minihalos, as studied in [arXiv:22XX.XXXXX](https://arxiv.org/abs/22XX.XXXXX), see that paper for more details.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7044255.svg)](https://doi.org/10.5281/zenodo.7044255)
+
+Python library for computing the number of absorption features of the 21 cm forest in a semianalytic formalism. Includes the enhancement of the signal due to the presence of substructures within minihalos, as studied in [arXiv:22XX.XXXXX](https://arxiv.org/abs/22XX.XXXXX). It supports non-standard cosmologies with impact in the large scale structure, such as warm dark matter and primordial black holes. See the papers [arXiv:22XX.XXXXX](https://arxiv.org/abs/22XX.XXXXX), [arXiv:2104.10695](https://arxiv.org/abs/2104.10695) for more details.
+
+
+## Usage
+
+The basis of the code is the 21 cm `Forest` class. Given a redshift and the temperature of the intergalactic medium at that epoch, we can define an instance of the state of the 21 cm forest.
+
+```python
+from Source.forest import Forest
+from Source.cosmo import Tk_ad
+
+# Define the redshift of interest
+z = 10
+# Get the adiabatic temperature of the intergalactic medium at z
+Tk = Tk_ad(z)
+
+21cmforest = Forest(z, Tk)
+```
+
+ This allows to call different observables such as the optical depth or the number of absorbers.
+
+ ```python
+ # Get a the optical depth, as a matrix in mass and impact parameter
+ tau = 21cmforest.tau_tot
+
+ # Get the number of absorption features and its (logarithmic) derivative with respect to tau
+ Nabs, dNabsdtau = 21cmforest.num_absorbers()
+ ```
+
+It is straightforward to include non-standard cosmologies by replacing the halo mass function, either using those included in the code or defined by the user:
+
+```python
+from Source.nlcdm import dndlnM_PBH
+
+# Define a cosmology where 10 % of dark matter is composed by primordial black holes of 1 solar mass
+21cmforest_PBH = Forest(z, Tk, dndlnM = lambda M, z: dndlnM_PBH(M, z, fpbh = 0.1, Mpbh = 1.))
+```
+
+See the source code at `Source` for more details, and the sample notebooks for examples of usage.
+
 
 ## Notebook examples
 
@@ -18,9 +59,12 @@ In order to illustrate the usage of the library, we include several example note
 
 * `density_profiles.ipynb`: compares the 21 cm forest outputs for different density profiles: NFW and uniform.
 
+* `nlcdm_example.ipynb`: compares the standard CDM 21 cm forest with different non-standard cosmologies: warm dark matter and primordial black holes.
+
+
 ## Requisites
 
-The code is written in Python3, and makes use of the package for cosmological computations [Colossus](https://bdiemer.bitbucket.io/colossus/), as well as several Python libraries:
+The code is written in Python3, and makes use of the package for cosmological computations [Colossus](https://bdiemer.bitbucket.io/colossus/), as well as several standard Python libraries:
 
 * `numpy`
 * `matplotlib`
@@ -30,7 +74,8 @@ The code is written in Python3, and makes use of the package for cosmological co
 
 ## Citation
 
-If you use the code, please link this repository, and cite [arXiv:22XX.XXXXX](https://arxiv.org/abs/22XX.XXXXX) and the DOI [10.5281/zenodo.4707447](https://doi.org/10.5281/zenodo.4707447).
+If you use the code, please link this repository, and cite [arXiv:22XX.XXXXX](https://arxiv.org/abs/22XX.XXXXX) and the DOI [10.5281/zenodo.7044255](https://doi.org/10.5281/zenodo.7044255).
+
 
 ## Contact
 
