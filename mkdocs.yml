@@ -1,0 +1,17 @@
+site_name: HAYASHI
+repo_url: https://github.com/PabloVD/HAYASHI
+docs_dir: Docs
+edit_uri: 'edit/master/Docs/'
+theme: readthedocs
+
+nav:
+- Home:
+  - "Overview" : "overview.md"
+  - 'Requisites': 'requisites.md'
+  - 'Usage': 'usage.md'
+  - 'Non-LCDM' : 'nlcdm.md'
+  - 'Examples' : 'examples.md'
+  - 'Citation' : 'citation.md'
+
+markdown_extensions:
+  - admonition 
