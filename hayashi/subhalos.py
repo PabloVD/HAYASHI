@@ -7,7 +7,7 @@ Last update: September 2022
 """
 
 
-from Source.cosmo import *
+from hayashi.cosmo import *
 
 # Set random seed for Monte Carlo integration
 np.random.seed(0)

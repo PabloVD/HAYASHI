@@ -3,8 +3,8 @@
 The basis of the code is the 21 cm `Forest` class. Given a redshift and the temperature of the intergalactic medium at that epoch, we can define an instance of the state of the 21 cm forest.
 
 ```python
-from Source.forest import Forest
-from Source.cosmo import Tk_ad
+from hayashi.forest import Forest
+from hayashi.cosmo import Tk_ad
 
 # Define the redshift of interest
 z = 10
@@ -23,3 +23,4 @@ Tk = Tk_ad(z)
  # Get the number of absorption features and its (logarithmic) derivative with respect to tau
  Nabs, dNabsdtau = 21cmforest.num_absorbers()
  ```
+ 

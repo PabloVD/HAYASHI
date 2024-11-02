@@ -9,10 +9,10 @@ import os
 from tqdm import tqdm
 from scipy import integrate, interpolate
 
-from Source.constants import *
-from Source import cosmo
-from Source import subhalos
-from Source import lss
+from hayashi.constants import *
+from hayashi import cosmo
+from hayashi import subhalos
+from hayashi import lss
 
 #---------------------------
 # 21cm Forest general class

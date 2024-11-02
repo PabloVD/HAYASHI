@@ -7,7 +7,7 @@ Last update: April 2021
 
 
 from scipy import integrate
-from Source.constants import *
+from hayashi.constants import *
 
 # Employ the Colossus package for some cosmological computations:
 # https://bdiemer.bitbucket.io/colossus/tutorials.html

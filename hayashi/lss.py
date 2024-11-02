@@ -5,7 +5,7 @@ Started: October 2018
 Last update: September 2022
 """
 
-from Source.cosmo import *
+from hayashi.cosmo import *
 from colossus.lss import mass_function
 
 # log cutoff in integrals

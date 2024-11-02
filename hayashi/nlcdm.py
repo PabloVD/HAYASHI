@@ -5,7 +5,7 @@ Started: October 2018
 Last update: September 2022
 """
 
-from Source.lss import *
+from hayashi.lss import *
 
 
 #--- Primordial Black Holes ---#

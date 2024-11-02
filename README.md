@@ -8,14 +8,15 @@
 
 Python library for computing the number of absorption features of the 21 cm forest in a semianalytic formalism. Includes the enhancement of the signal due to the presence of substructures within minihalos, as studied in [arXiv:2209.01305](https://arxiv.org/abs/2209.01305). It supports non-standard cosmologies with impact in the large scale structure, such as warm dark matter and primordial black holes. See the papers [arXiv:2209.01305](https://arxiv.org/abs/2209.01305), [arXiv:2104.10695](https://arxiv.org/abs/2104.10695) for more details.
 
+Read the documentation [here](https://hayashi.readthedocs.io/en/latest/).
 
 ## Usage
 
 The basis of the code is the 21 cm `Forest` class. Given a redshift and the temperature of the intergalactic medium at that epoch, we can define an instance of the state of the 21 cm forest.
 
 ```python
-from Source.forest import Forest
-from Source.cosmo import Tk_ad
+from hayashi.forest import Forest
+from hayashi.cosmo import Tk_ad
 
 # Define the redshift of interest
 z = 10
@@ -38,13 +39,13 @@ Tk = Tk_ad(z)
 It is straightforward to include non-standard cosmologies by replacing the halo mass function, either using those included in the code or defined by the user. This is an example with primordial black holes, which modify the halo mass function due to a shot noise isocurvature mode (see [arXiv:2104.10695](https://arxiv.org/abs/2104.10695)):
 
 ```python
-from Source.nlcdm import dndlnM_PBH
+from hayashi.nlcdm import dndlnM_PBH
 
 # Define a cosmology where 10 % of dark matter is composed by primordial black holes of 1 solar mass
 21cmforest_PBH = Forest(z, Tk, dndlnM = lambda M, z: dndlnM_PBH(M, z, fpbh = 0.1, Mpbh = 1.))
 ```
 
-See the source code at `Source` for more details, and the sample notebooks for examples of usage.
+See the source code at `hayashi` for more details, and the sample notebooks for examples of usage.
 
 
 ## Notebook examples

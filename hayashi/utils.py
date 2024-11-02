@@ -8,7 +8,7 @@ Last update: July 2022
 import numpy as np
 import math
 from scipy import interpolate
-from Source.cosmo import Tk_ad
+from hayashi.cosmo import Tk_ad
 import os
 
 # Create some folders for outputs if they are absent
