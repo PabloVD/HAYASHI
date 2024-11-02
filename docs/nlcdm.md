@@ -8,7 +8,7 @@ The current implementation includes two different non-ΛCDM scenarios:
 
 This is an example with primordial black holes, which modify the halo mass function due to a shot noise isocurvature mode (see [arXiv:2104.10695](https://arxiv.org/abs/2104.10695)):
 
-```python
+```py
 from hayashi.nlcdm import dndlnM_PBH
 
 # Define a cosmology where 10 % of dark matter is composed by primordial black holes of 1 solar mass

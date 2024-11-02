@@ -2,7 +2,7 @@
 
 The basis of the code is the 21 cm `Forest` class. Given a redshift and the temperature of the intergalactic medium at that epoch, we can define an instance of the state of the 21 cm forest.
 
-```python
+```py
 from hayashi.forest import Forest
 from hayashi.cosmo import Tk_ad
 
@@ -16,7 +16,7 @@ Tk = Tk_ad(z)
 
  This allows to call different observables such as the optical depth or the number of absorbers.
 
- ```python
+ ```py
  # Get a the optical depth, as a matrix in mass and impact parameter
  tau = 21cmforest.tau_tot
 

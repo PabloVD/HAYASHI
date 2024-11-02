@@ -15,3 +15,6 @@ nav:
 
 markdown_extensions:
   - admonition 
+  
+plugins:
+  - with-pdf
