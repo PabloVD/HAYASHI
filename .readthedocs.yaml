@@ -7,7 +7,7 @@ build:
 
 python:
   install:
-    - requirements: docs/requirements.txt
+    - requirements: Docs/requirements.txt
 
 mkdocs:
   configuration: mkdocs.yml
