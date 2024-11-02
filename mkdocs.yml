@@ -1,7 +1,7 @@
 site_name: HAYASHI
 repo_url: https://github.com/PabloVD/HAYASHI
 docs_dir: docs
-edit_uri: 'edit/master/Docs/'
+edit_uri: 'edit/master/docs/'
 theme: readthedocs
 
 nav:

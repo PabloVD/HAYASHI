@@ -26,15 +26,15 @@ Tk = Tk_ad(z)
 21cmforest = Forest(z, Tk)
 ```
 
- This allows to call different observables such as the optical depth or the number of absorbers.
+This allows to call different observables such as the optical depth or the number of absorbers.
 
- ```python
- # Get a the optical depth, as a matrix in mass and impact parameter
- tau = 21cmforest.tau_tot
+```python
+# Get a the optical depth, as a matrix in mass and impact parameter
+tau = 21cmforest.tau_tot
 
- # Get the number of absorption features and its (logarithmic) derivative with respect to tau
- Nabs, dNabsdtau = 21cmforest.num_absorbers()
- ```
+# Get the number of absorption features and its (logarithmic) derivative with respect to tau
+Nabs, dNabsdtau = 21cmforest.num_absorbers()
+```
 
 It is straightforward to include non-standard cosmologies by replacing the halo mass function, either using those included in the code or defined by the user. This is an example with primordial black holes, which modify the halo mass function due to a shot noise isocurvature mode (see [arXiv:2104.10695](https://arxiv.org/abs/2104.10695)):
 
