@@ -6,7 +6,7 @@ theme: readthedocs
 
 nav:
 - Home:
-  - "Overview" : "overview.md"
+  - 'Overview' : "index.md"
   - 'Requisites': 'requisites.md'
   - 'Usage': 'usage.md'
   - 'Non-LCDM' : 'nlcdm.md'
