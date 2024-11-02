@@ -3,8 +3,8 @@
 It is straightforward to include non-standard cosmologies by replacing the halo mass function, either using those included in the code or defined by the user.
 
 The current implementation includes two different non-ΛCDM scenarios:
-- Warm Dark Matter (WDM)
-- Primordial Black Holes (PBH)
++ Warm Dark Matter (WDM)
++ Primordial Black Holes (PBH)
 
 This is an example with primordial black holes, which modify the halo mass function due to a shot noise isocurvature mode (see [arXiv:2104.10695](https://arxiv.org/abs/2104.10695)):
 
