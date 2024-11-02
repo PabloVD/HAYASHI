@@ -14,13 +14,12 @@ Tk = Tk_ad(z)
 21cmforest = Forest(z, Tk)
 ```
 
- This allows to call different observables such as the optical depth or the number of absorbers.
+This allows to call different observables such as the optical depth or the number of absorbers.
 
- ```py
- # Get a the optical depth, as a matrix in mass and impact parameter
- tau = 21cmforest.tau_tot
+```py
+# Get a the optical depth, as a matrix in mass and impact parameter
+tau = 21cmforest.tau_tot
 
- # Get the number of absorption features and its (logarithmic) derivative with respect to tau
- Nabs, dNabsdtau = 21cmforest.num_absorbers()
- ```
- 
+# Get the number of absorption features and its (logarithmic) derivative with respect to tau
+Nabs, dNabsdtau = 21cmforest.num_absorbers()
+```
