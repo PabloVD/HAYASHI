@@ -1,6 +1,7 @@
 # Following https://www.kdnuggets.com/pip-install-you-a-beginners-guide-to-creating-your-python-library
 
 from setuptools import find_packages, setup
+from hayashi.version import __version__
 
 with open('README.md') as f:
     long_description = f.read()
@@ -8,7 +9,7 @@ with open('README.md') as f:
 setup(
     name='hayashi',
     packages=find_packages(),
-    version='1.1.3',
+    version=__version__,
     description='Python library for computing the number of absorption features of the 21 cm forest in a semianalytic formalism.',
     long_description=long_description,
     long_description_content_type="text/markdown",
