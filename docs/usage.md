@@ -11,15 +11,37 @@ z = 10
 # Get the adiabatic temperature of the intergalactic medium at z
 Tk = Tk_ad(z)
 
-21cmforest = Forest(z, Tk)
+forest = Forest(z, Tk)
 ```
 
 This allows to call different observables such as the optical depth or the number of absorbers.
 
 ```py
 # Get a the optical depth, as a matrix in mass and impact parameter
-tau = 21cmforest.tau_tot
+tau = forest.tau_tot
 
 # Get the number of absorption features and its (logarithmic) derivative with respect to tau
-Nabs, dNabsdtau = 21cmforest.num_absorbers()
+Nabs, dNabsdtau = forest.num_absorbers()
+```
+
+You can visualize these results with the following script:
+
+```python
+import matplotlib.pyplot as plt
+
+fig, (ax1,ax2) = plt.subplots(2,1,sharex=True, figsize=(6,6))
+fig.subplots_adjust(hspace=0.)
+
+ax1.loglog(forest.tauvec, Nabs)
+ax2.loglog(forest.tauvec[1:],-dNabsdtau)
+
+ax1.set_ylabel(r"$N(>\tau)$")
+ax2.set_ylabel(r"$|dN(>\tau)/dz|$")
+ax1.set_xlabel(r"$\tau$")
+ax2.set_xlabel(r"$\tau$")
+
+ax1.grid()
+ax2.grid()
+
+plt.show()
 ```

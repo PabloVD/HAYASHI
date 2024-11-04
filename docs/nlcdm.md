@@ -14,7 +14,7 @@ This is an example with primordial black holes, which modify the halo mass funct
 from hayashi.nlcdm import dndlnM_PBH
 
 # Define a cosmology where 10 % of dark matter is composed by primordial black holes of 1 solar mass
-21cmforest_PBH = Forest(z, Tk, dndlnM = lambda M, z: dndlnM_PBH(M, z, fpbh = 0.1, Mpbh = 1.))
+forest_PBH = Forest(z, Tk, dndlnM = lambda M, z: dndlnM_PBH(M, z, fpbh = 0.1, Mpbh = 1.))
 ```
 
 See the source code at `hayashi` for more details, and the sample notebooks for examples of usage.

@@ -33,17 +33,17 @@ z = 10
 # Get the adiabatic temperature of the intergalactic medium at z
 Tk = Tk_ad(z)
 
-21cmforest = Forest(z, Tk)
+forest = Forest(z, Tk)
 ```
 
 This allows to call different observables such as the optical depth or the number of absorbers.
 
 ```python
 # Get a the optical depth, as a matrix in mass and impact parameter
-tau = 21cmforest.tau_tot
+tau = forest.tau_tot
 
 # Get the number of absorption features and its (logarithmic) derivative with respect to tau
-Nabs, dNabsdtau = 21cmforest.num_absorbers()
+Nabs, dNabsdtau = forest.num_absorbers()
 ```
 
 It is straightforward to include non-standard cosmologies by replacing the halo mass function, either using those included in the code or defined by the user. This is an example with primordial black holes, which modify the halo mass function due to a shot noise isocurvature mode (see [arXiv:2104.10695](https://arxiv.org/abs/2104.10695)):
@@ -52,7 +52,7 @@ It is straightforward to include non-standard cosmologies by replacing the halo 
 from hayashi.nlcdm import dndlnM_PBH
 
 # Define a cosmology where 10 % of dark matter is composed by primordial black holes of 1 solar mass
-21cmforest_PBH = Forest(z, Tk, dndlnM = lambda M, z: dndlnM_PBH(M, z, fpbh = 0.1, Mpbh = 1.))
+forest_PBH = Forest(z, Tk, dndlnM = lambda M, z: dndlnM_PBH(M, z, fpbh = 0.1, Mpbh = 1.))
 ```
 
 See the source code at `hayashi` for more details, and the sample notebooks for examples of usage.
