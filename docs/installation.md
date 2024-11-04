@@ -5,5 +5,3 @@ The code is written in Python3, and makes use of the package for cosmological co
 For installing the Python package from [PyPI](https://pypi.org/project/hayashi/):
 
 `pip install hayashi`
-
-The Python client SDK is open source, so you can also download it and build locally.

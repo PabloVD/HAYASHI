@@ -19,8 +19,6 @@ For installing the Python package from [PyPI](https://pypi.org/project/hayashi/)
 
 `pip install hayashi`
 
-The Python client SDK is open source, so you can also download it and build locally.
-
 
 ## Usage
 
