@@ -1,2 +1,6 @@
 .DS_Store
 .ipynb_checkpoints/
+build/
+dist/
+hayashi.egg-info/
+hayashi/__pychache__/

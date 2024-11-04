@@ -10,6 +10,18 @@ Python library for computing the number of absorption features of the 21 cm fore
 
 [Read the documentation here.](https://hayashi.readthedocs.io/en/latest/)
 
+
+## Installation
+
+The code is written in Python3, and makes use of the package for cosmological computations [Colossus](https://bdiemer.bitbucket.io/colossus/), as well as several standard Python libraries(`numpy`,`scipy`,`tqdm`), which are automatically installed when `hayashi` is installed.
+
+For installing the Python package from PyPI:
+
+`pip install hayashi`
+
+The Python client SDK is open source, so you can also download it and build locally.
+
+
 ## Usage
 
 The basis of the code is the 21 cm `Forest` class. Given a redshift and the temperature of the intergalactic medium at that epoch, we can define an instance of the state of the 21 cm forest.
@@ -59,16 +71,6 @@ In order to illustrate the usage of the library, we include several example note
 * `density_profiles.ipynb`: compares the 21 cm forest outputs for different density profiles: NFW and uniform.
 
 * `tidal_disruption.ipynb`: compares the 21 cm forest observables when tidal disruption is considered in subhalos.
-
-
-## Requisites
-
-The code is written in Python3, and makes use of the package for cosmological computations [Colossus](https://bdiemer.bitbucket.io/colossus/), as well as several standard Python libraries:
-
-* `numpy`
-* `matplotlib`
-* `scipy`
-* `tqdm`
 
 
 ## Citation
