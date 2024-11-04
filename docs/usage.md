@@ -47,6 +47,7 @@ plt.show()
 ```
 
 ![Number of absorbers and its derivative with respect to redshift as a function of the optical depth](img/absorbers.png "Number of absorbers and its derivative with respect to redshift as a function of the optical depth")
+
 Number of absorbers and its derivative with respect to redshift as a function of the optical depth
 
 See others examples of usage in the folder `examples`.
