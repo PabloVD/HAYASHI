@@ -35,8 +35,8 @@ fig.subplots_adjust(hspace=0.)
 ax1.loglog(forest.tauvec, Nabs)
 ax2.loglog(forest.tauvec[1:],-dNabsdtau)
 
-ax1.set_ylabel(r"$N(>\tau)$")
-ax2.set_ylabel(r"$|dN(>\tau)/dz|$")
+ax1.set_ylabel(r"$dN(>\tau)/dz$")
+ax2.set_ylabel(r"$|d^2N(>\tau)/dz^2|$")
 ax1.set_xlabel(r"$\tau$")
 ax2.set_xlabel(r"$\tau$")
 
