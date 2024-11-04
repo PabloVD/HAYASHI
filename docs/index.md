@@ -10,4 +10,4 @@ For comments, questions etc. you can contact me at <pablo.villanueva.domingo@gma
 
 ![Impact parameter as a function of the optical depth for halos with and without subhalos](img/tau_subhalos.png "Impact parameter as a function of the optical depth for halos with and without subhalos")
 
-Impact parameter as a function of the optical depth for halos with and without subhalos
+*Impact parameter as a function of the optical depth for halos with and without subhalos*
