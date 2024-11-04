@@ -9,3 +9,4 @@ Python library for computing the number of absorption features of the 21 cm fore
 For comments, questions etc. you can contact me at <pablo.villanueva.domingo@gmail.com>
 
 ![Impact parameter as a function of the optical depth for halos with and without subhalos](img/tau_subhalos.png "Impact parameter as a function of the optical depth for halos with and without subhalos")
+Impact parameter as a function of the optical depth for halos with and without subhalos
