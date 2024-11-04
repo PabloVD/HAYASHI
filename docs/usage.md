@@ -46,5 +46,5 @@ ax2.grid()
 plt.show()
 ```
 
-![Number of absorbers and its derivative with respect to redshift as a function of the optical depth](img/tau_subhalos.png "Number of absorbers and its derivative with respect to redshift as a function of the optical depth")
+![Number of absorbers and its derivative with respect to redshift as a function of the optical depth](img/absorbers.png "Number of absorbers and its derivative with respect to redshift as a function of the optical depth")
 Number of absorbers and its derivative with respect to redshift as a function of the optical depth
